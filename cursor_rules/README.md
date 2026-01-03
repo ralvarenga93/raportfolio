@@ -5,8 +5,8 @@ This directory contains project-specific rules and guidelines for Cursor AI.
 ## Structure
 
 - general.md - General coding standards and best practices
-- rchitecture.md - Architecture and design patterns
-- 	esting.md - Testing guidelines and standards
+- architecture.md - Architecture and design patterns
+- testing.md - Testing guidelines and standards
 - documentation.md - Documentation standards
 - git-workflow.md - Git workflow and branching strategies
 
