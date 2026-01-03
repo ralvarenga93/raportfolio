@@ -11,7 +11,7 @@ This directory contains project-specific rules that are **automatically loaded**
 ## Current Rules
 
 - general.mdc - General coding standards and best practices
-- rchitecture.mdc - Architecture guidelines and design patterns
+- Architecture.mdc - Architecture guidelines and design patterns
 - 	esting.mdc - Testing guidelines and standards
 - documentation.mdc - Documentation standards and requirements
 - git-workflow.mdc - Git workflow and branching strategies
@@ -37,5 +37,5 @@ This directory contains project-specific rules that are **automatically loaded**
 Each rule file uses the .mdc format (Markdown with metadata):
 - YAML frontmatter at the top (between ---)
 - Markdown content below
-- lwaysApply: true makes the rule always active
+- AlwaysApply: true makes the rule always active
 - globs can specify which files the rule applies to

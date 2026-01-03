@@ -5,10 +5,13 @@ alwaysApply: true
 
 # Git Workflow Rules
 
+## Git Commands
+- Provide an explanation of what each git command that needs to be run will do
+
 ## Branching Strategy
 - Use feature branches for new development
 - Keep branches focused on a single feature or fix
-- Use descriptive branch names (e.g., eature/add-user-auth, ix/login-bug)
+- Use descriptive branch names (e.g., Feature/add-user-auth, Fix/login-bug)
 - Delete branches after merging
 
 ## Commits
