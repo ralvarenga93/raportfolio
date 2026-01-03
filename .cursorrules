@@ -1,14 +1,19 @@
 ﻿# Cursor Project Rules
 
-This project uses modular rules stored in the cursor_rules/ directory.
+This project uses the official Cursor rules structure with rules stored in .cursor/rules/.
 
-## Primary Rules Location
-All project-specific rules are located in the cursor_rules/ folder. Reference specific rule files as needed:
-- @cursor_rules/general.md - General coding standards
-- @cursor_rules/architecture.md - Architecture guidelines
-- @cursor_rules/testing.md - Testing standards
-- @cursor_rules/documentation.md - Documentation requirements
-- @cursor_rules/git-workflow.md - Git workflow rules
+## Rules Location
+All project-specific rules are automatically loaded from .cursor/rules/ directory. These rules are:
+- **Automatically applied** - No need to reference them in prompts
+- **Project-specific** - Only apply to this repository
+- **Version controlled** - Stored in GitHub for team collaboration
+
+## Current Rules
+- General coding standards (general.mdc)
+- Architecture guidelines (rchitecture.mdc)
+- Testing standards (	esting.mdc)
+- Documentation requirements (documentation.mdc)
+- Git workflow rules (git-workflow.mdc)
 
 ## Quick Reference
 - Always check existing code patterns before implementing new features
@@ -16,4 +21,4 @@ All project-specific rules are located in the cursor_rules/ folder. Reference sp
 - Update documentation when adding new features
 - Write tests for new functionality
 
-For detailed rules, see the specific files in cursor_rules/.
+For detailed rules, see the .mdc files in .cursor/rules/.
