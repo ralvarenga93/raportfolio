@@ -1,0 +1,25 @@
+﻿# Git Workflow Rules
+
+## Branching Strategy
+- Use feature branches for new development
+- Keep branches focused on a single feature or fix
+- Use descriptive branch names (e.g., eature/add-user-auth, ix/login-bug)
+- Delete branches after merging
+
+## Commits
+- Write clear, descriptive commit messages
+- Use conventional commit format when applicable
+- Make atomic commits (one logical change per commit)
+- Don't commit broken code
+
+## Pull Requests
+- Keep PRs focused and reasonably sized
+- Include a clear description of changes
+- Request reviews before merging
+- Ensure all tests pass before merging
+
+## Best Practices
+- Pull latest changes before starting new work
+- Resolve conflicts promptly
+- Don't force push to shared branches
+- Keep main/master branch stable and deployable
