@@ -23,3 +23,6 @@ alwaysApply: true
 - Optimize for readability first, performance second
 - Profile before optimizing
 - Avoid premature optimization
+
+## Summary
+- When the user types "I'm done for the day" you will provide a summary of all the work that was done.

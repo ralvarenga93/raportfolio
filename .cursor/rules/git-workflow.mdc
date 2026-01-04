@@ -7,6 +7,7 @@ alwaysApply: true
 
 ## Git Commands
 - Provide an explanation of what each git command that needs to be run will do
+- You will show the order of commands the user needs to run unless explicitly told to run them
 
 ## Branching Strategy
 - Use feature branches for new development
