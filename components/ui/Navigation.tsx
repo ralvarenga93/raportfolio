@@ -13,6 +13,7 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +43,12 @@ const Navigation = () => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsMobileMenuOpen(false); // Close mobile menu after navigation
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -98,25 +104,74 @@ const Navigation = () => {
               );
             })}
           </ul>
-          {/* Mobile menu button - can be enhanced later */}
+          {/* Mobile menu button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={toggleMobileMenu}
             tabIndex={0}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+            {isMobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            )}
           </button>
         </div>
+        {/* Mobile menu dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 dark:border-gray-700">
+            <ul className="py-4 space-y-2">
+              {navItems.map((item) => {
+                const sectionId = item.href.substring(1);
+                return (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`block px-4 py-3 text-base font-medium transition-colors min-h-[44px] flex items-center ${
+                        activeSection === sectionId
+                          ? "text-foreground bg-gray-100 dark:bg-gray-800"
+                          : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                      }`}
+                      aria-label={`Navigate to ${item.name} section`}
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleNavClick(e as any, item.href);
+                        }
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
